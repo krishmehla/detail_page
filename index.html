@@ -1,13 +1,756 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moderne Autodetailseite für Autohändler</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chevrolet Camaro Coupe SS 6.2 V8 Klappe-Recaro - Autohaus Beispiel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Static Navigation Bar -->
+        <div class="static-nav">
+            <div class="nav-content">
+                <button class="back-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="m15 18-6-6 6-6"/>
+                    </svg>
+                    <span>Zurück zu den Fahrzeugen</span>
+                </button>
+                
+                <div class="nav-actions">
+                    <button class="nav-action" data-action="call">
+                        <span class="nav-action-text">Anrufen</span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="nav-action" data-action="share">
+                        <span class="nav-action-text">Teilen</span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="18" cy="5" r="3"/>
+                            <circle cx="6" cy="12" r="3"/>
+                            <circle cx="18" cy="19" r="3"/>
+                            <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/>
+                            <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="nav-action" data-action="download">
+                        <span class="nav-action-text">PDF</span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" x2="12" y1="15" y2="3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sticky Vehicle Bar -->
+        <div class="sticky-vehicle-bar">
+            <div class="sticky-content">
+                <div class="vehicle-info">
+                    <div class="vehicle-image">
+                        <img src="https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&w=80&h=60&fit=crop" alt="Vehicle Preview">
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Chevrolet Camaro Coupe SS 6.2 V8 Klappe-Recaro</h3>
+                        <div class="price-info">
+                            <span class="price">24.990 €</span>
+                            <span class="financing">Finanz: ab 289 €</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sticky-actions">
+                    <button class="btn btn-secondary" data-action="financing">Finanzierung</button>
+                    <button class="btn btn-secondary" data-action="tradein">Inzahlungnahme</button>
+                    <button class="btn btn-primary" data-action="contact">Jetzt anfragen</button>
+                </div>
+                
+                <!-- Mobile call button -->
+                <div class="mobile-call">
+                    <button class="call-btn" data-action="call">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Hero Image -->
+        <div class="mobile-hero">
+            <div class="image-gallery">
+                <div class="main-image">
+                    <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                         alt="Chevrolet Camaro - Bild 1" 
+                         class="current-image">
+                    
+                    <div class="image-counter">
+                        <span class="current-index">1</span>/<span class="total-images">6</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                    <button class="dot" data-index="5"></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <!-- Mobile Pricing Box -->
+            <div class="mobile-pricing">
+                <div class="pricing-box">
+                    <!-- Vehicle Title Section -->
+                    <div class="vehicle-title">
+                        <h1 id="main-vehicle-title">Chevrolet Camaro Coupe SS 6.2 V8 Klappe-Recaro</h1>
+                        <p class="vehicle-subtitle">Limousine, Gebrauchtwagen</p>
+                    </div>
+                    
+                    <!-- Tabs -->
+                    <div class="pricing-tabs">
+                        <button class="tab active" data-tab="barkauf">Barkauf</button>
+                        <button class="tab" data-tab="finanzierung">Finanzierung</button>
+                        <button class="tab" data-tab="leasing">Leasing</button>
+                    </div>
+                    
+                    <!-- Price Display -->
+                    <div class="price-display">
+                        <div class="price-header">
+                            <svg class="price-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                                <line x1="2" x2="22" y1="10" y2="10"/>
+                            </svg>
+                            <span class="price-subtitle">Kaufpreis</span>
+                        </div>
+                        <div class="price-amount">
+                            <span class="price-value">24.990</span>
+                            <span class="price-currency">€</span>
+                            <button class="info-btn" style="display: none;">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="m9,9 0,0a3,3 0 0,1 6,0c0,2 -3,3 -3,3"/>
+                                    <path d="m9,17 0.01,0"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Details -->
+                    <div class="pricing-details">
+                        <!-- Net Price - only for Barkauf -->
+                        <div class="detail-row net-price">
+                            <span class="detail-label">Netto: 20.990 €</span>
+                            <span class="detail-value">MwSt. ausweisbar</span>
+                        </div>
+                        
+                        <!-- Warranty - only for Barkauf -->
+                        <div class="detail-row warranty">
+                            <span class="detail-label">Gewährleistung</span>
+                            <span class="detail-value">12 Monate</span>
+                        </div>
+                        
+                        <!-- Financing Details - hidden by default -->
+                        <div class="financing-details" style="display: none;">
+                            <div class="detail-row">
+                                <span class="detail-label">Anzahlung</span>
+                                <div class="input-wrapper">
+                                    <input type="text" class="anzahlung-input" value="4.990">
+                                    <span class="input-suffix">€</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Laufzeit</span>
+                                <select class="laufzeit-select">
+                                    <option value="12">12 Monate</option>
+                                    <option value="24">24 Monate</option>
+                                    <option value="36">36 Monate</option>
+                                    <option value="48">48 Monate</option>
+                                    <option value="60">60 Monate</option>
+                                    <option value="72">72 Monate</option>
+                                    <option value="84" selected>84 Monate</option>
+                                    <option value="96">96 Monate</option>
+                                    <option value="108">108 Monate</option>
+                                    <option value="120">120 Monate</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Leasing Details - hidden by default -->
+                        <div class="leasing-details" style="display: none;">
+                            <div class="detail-row">
+                                <span class="detail-label">Laufzeit</span>
+                                <span class="detail-value">48 Monate</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Kilometer/Jahr</span>
+                                <span class="detail-value">15.000 km</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Sonderzahlung</span>
+                                <span class="detail-value">0 €</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button class="btn btn-primary btn-full pricing-cta">
+                        Jetzt anfragen
+                    </button>
+                    
+                    <!-- Disclaimer -->
+                    <p class="disclaimer" style="display: none;">
+                        * Beispielrechnung, unverbindlich. Bonitätsprüfung erforderlich.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Desktop Layout: Gallery + Pricing -->
+            <div class="desktop-layout">
+                <div class="gallery-section">
+                    <div class="image-gallery">
+                        <div class="main-image">
+                            <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" 
+                                 alt="Chevrolet Camaro - Bild 1" 
+                                 class="current-image">
+                            
+                            <!-- Navigation arrows - desktop only -->
+                            <button class="nav-arrow nav-prev">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="m15 18-6-6 6-6"/>
+                                </svg>
+                            </button>
+                            
+                            <button class="nav-arrow nav-next">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="m9 18 6-6-6-6"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Thumbnail Gallery -->
+                        <div class="thumbnails">
+                            <button class="thumbnail active" data-index="0">
+                                <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop" 
+                                     alt="Thumbnail 1">
+                            </button>
+                            <button class="thumbnail" data-index="1">
+                                <img src="https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop" 
+                                     alt="Thumbnail 2">
+                            </button>
+                            <button class="thumbnail" data-index="2">
+                                <img src="https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop" 
+                                     alt="Thumbnail 3">
+                            </button>
+                            <button class="thumbnail" data-index="3">
+                                <img src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop" 
+                                     alt="Thumbnail 4">
+                            </button>
+                            <button class="thumbnail" data-index="4">
+                                <img src="https://images.pexels.com/photos/1127249/pexels-photo-1127249.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop" 
+                                     alt="Thumbnail 5">
+                            </button>
+                            <button class="thumbnail" data-index="5">
+                                <img src="https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&fit=crop" 
+                                     alt="Thumbnail 6">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="pricing-box">
+                        <!-- Same pricing box content as mobile -->
+                        <div class="vehicle-title">
+                            <h1>Chevrolet Camaro Coupe SS 6.2 V8 Klappe-Recaro</h1>
+                            <p class="vehicle-subtitle">Limousine, Gebrauchtwagen</p>
+                        </div>
+                        
+                        <div class="pricing-tabs">
+                            <button class="tab active" data-tab="barkauf">Barkauf</button>
+                            <button class="tab" data-tab="finanzierung">Finanzierung</button>
+                            <button class="tab" data-tab="leasing">Leasing</button>
+                        </div>
+                        
+                        <div class="price-display">
+                            <div class="price-header">
+                                <svg class="price-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect width="20" height="14" x="2" y="5" rx="2"/>
+                                    <line x1="2" x2="22" y1="10" y2="10"/>
+                                </svg>
+                                <span class="price-subtitle">Kaufpreis</span>
+                            </div>
+                            <div class="price-amount">
+                                <span class="price-value">24.990</span>
+                                <span class="price-currency">€</span>
+                                <button class="info-btn" style="display: none;">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="m9,9 0,0a3,3 0 0,1 6,0c0,2 -3,3 -3,3"/>
+                                        <path d="m9,17 0.01,0"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-details">
+                            <div class="detail-row net-price">
+                                <span class="detail-label">Netto: 20.990 €</span>
+                                <span class="detail-value">MwSt. ausweisbar</span>
+                            </div>
+                            
+                            <div class="detail-row warranty">
+                                <span class="detail-label">Gewährleistung</span>
+                                <span class="detail-value">12 Monate</span>
+                            </div>
+                            
+                            <div class="financing-details" style="display: none;">
+                                <div class="detail-row">
+                                    <span class="detail-label">Anzahlung</span>
+                                    <div class="input-wrapper">
+                                        <input type="text" class="anzahlung-input" value="4.990">
+                                        <span class="input-suffix">€</span>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Laufzeit</span>
+                                    <select class="laufzeit-select">
+                                        <option value="12">12 Monate</option>
+                                        <option value="24">24 Monate</option>
+                                        <option value="36">36 Monate</option>
+                                        <option value="48">48 Monate</option>
+                                        <option value="60">60 Monate</option>
+                                        <option value="72">72 Monate</option>
+                                        <option value="84" selected>84 Monate</option>
+                                        <option value="96">96 Monate</option>
+                                        <option value="108">108 Monate</option>
+                                        <option value="120">120 Monate</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="leasing-details" style="display: none;">
+                                <div class="detail-row">
+                                    <span class="detail-label">Laufzeit</span>
+                                    <span class="detail-value">48 Monate</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Kilometer/Jahr</span>
+                                    <span class="detail-value">15.000 km</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Sonderzahlung</span>
+                                    <span class="detail-value">0 €</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-full pricing-cta">
+                            Jetzt anfragen
+                        </button>
+                        
+                        <p class="disclaimer" style="display: none;">
+                            * Beispielrechnung, unverbindlich. Bonitätsprüfung erforderlich.
+                        </p>
+                    </div>
+                    
+                    <!-- Technical Specs in 2x3 Grid -->
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                                <line x1="16" x2="16" y1="2" y2="6"/>
+                                <line x1="8" x2="8" y1="2" y2="6"/>
+                                <line x1="3" x2="21" y1="10" y2="10"/>
+                            </svg>
+                            <div class="spec-label">Erstzulassung</div>
+                            <div class="spec-value">02/2022</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                            <div class="spec-label">KM-Stand</div>
+                            <div class="spec-value">45.215 KM</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 12h18l-3-3m0 6l3-3"/>
+                            </svg>
+                            <div class="spec-label">Kraftstoff</div>
+                            <div class="spec-value">Benzin</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6"/>
+                                <path d="m21 12-6 0m-6 0-6 0"/>
+                            </svg>
+                            <div class="spec-label">Getriebe</div>
+                            <div class="spec-value">Automatik</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" x2="21" y1="6" y2="6"/>
+                                <path d="M16 10a4 4 0 0 1-8 0"/>
+                            </svg>
+                            <div class="spec-label">Leistung</div>
+                            <div class="spec-value">225 kW / 306 PS</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            <div class="spec-label">Vorbesitzer</div>
+                            <div class="spec-value">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Vehicle Specifications -->
+            <div class="mobile-specs">
+                <div class="vehicle-specs">
+                    <div class="spec-item">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                            <line x1="16" x2="16" y1="2" y2="6"/>
+                            <line x1="8" x2="8" y1="2" y2="6"/>
+                            <line x1="3" x2="21" y1="10" y2="10"/>
+                        </svg>
+                        <div class="spec-label">Erstzulassung</div>
+                        <div class="spec-value">02/2022</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                        <div class="spec-label">KM-Stand</div>
+                        <div class="spec-value">45.215 KM</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 12h18l-3-3m0 6l3-3"/>
+                        </svg>
+                        <div class="spec-label">Kraftstoff</div>
+                        <div class="spec-value">Benzin</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6"/>
+                            <path d="m21 12-6 0m-6 0-6 0"/>
+                        </svg>
+                        <div class="spec-label">Getriebe</div>
+                        <div class="spec-value">Automatik</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                            <line x1="3" x2="21" y1="6" y2="6"/>
+                            <path d="M16 10a4 4 0 0 1-8 0"/>
+                        </svg>
+                        <div class="spec-label">Leistung</div>
+                        <div class="spec-value">225 kW / 306 PS</div>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <svg class="spec-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <div class="spec-label">Vorbesitzer</div>
+                        <div class="spec-value">2</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form" data-contact-form>
+                <h3 class="section-title">Kontakt & Anfrage</h3>
+                
+                <div class="contact-layout">
+                    <!-- Company Information -->
+                    <div class="company-info">
+                        <div class="company-header">
+                            <h4>Autohaus Beispiel GmbH</h4>
+                            <div class="company-line"></div>
+                        </div>
+                        
+                        <div class="company-details">
+                            <div class="detail-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <div class="detail-primary">Musterstraße 123</div>
+                                    <div class="detail-secondary">70173 Stuttgart</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                <div>
+                                    <div class="detail-primary">Öffnungszeiten</div>
+                                    <div class="opening-status">Jetzt geöffnet</div>
+                                    <div class="opening-hours">
+                                        <div>Mo–Fr: 08:00 – 18:00 Uhr</div>
+                                        <div>Sa: 09:00 – 16:00 Uhr</div>
+                                        <div>So: Geschlossen</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Person -->
+                        <div class="contact-person">
+                            <div class="person-header">
+                                <div class="person-label">Ihr Ansprechpartner</div>
+                                <div class="person-line"></div>
+                            </div>
+                            
+                            <div class="person-card">
+                                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                                     alt="Michael Weber" class="person-image">
+                                
+                                <div class="person-info">
+                                    <div class="person-name">Michael Weber</div>
+                                    <div class="person-title">Verkaufsberater</div>
+                                    
+                                    <button class="person-phone" data-action="call">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                        </svg>
+                                        <span>+49 (0) 7123 456 78-90</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="form-section">
+                        <form class="contact-form-element" id="contact-form">
+                            <!-- Salutation -->
+                            <div class="form-group">
+                                <label class="form-label">
+                                    Anrede <span class="required">*</span>
+                                </label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="salutation" value="herr" required>
+                                        <span>Herr</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="salutation" value="frau" required>
+                                        <span>Frau</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Name -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        Vorname <span class="required">*</span>
+                                    </label>
+                                    <input type="text" name="firstName" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        Nachname <span class="required">*</span>
+                                    </label>
+                                    <input type="text" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <!-- Email and Phone -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        E-Mail <span class="required">*</span>
+                                    </label>
+                                    <input type="email" name="email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        Telefonnummer <span class="required">*</span>
+                                    </label>
+                                    <div class="phone-input">
+                                        <select name="countryCode" class="country-select">
+                                            <option value="+49">DE +49</option>
+                                            <option value="+43">AT +43</option>
+                                            <option value="+41">CH +41</option>
+                                            <option value="+33">FR +33</option>
+                                            <option value="+31">NL +31</option>
+                                        </select>
+                                        <input type="tel" name="phone" class="form-input" placeholder="171 1234567" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Interests -->
+                            <div class="form-group">
+                                <label class="form-label">Interesse</label>
+                                <div class="interest-buttons">
+                                    <button type="button" class="interest-btn" data-interest="financing">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <rect width="20" height="14" x="2" y="5" rx="2"/>
+                                            <line x1="2" x2="22" y1="10" y2="10"/>
+                                        </svg>
+                                        <span>Finanzierung</span>
+                                    </button>
+                                    <button type="button" class="interest-btn" data-interest="tradein">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M14 16H9m10 0h3m-3-3.5a3.5 3.5 0 0 1-7 0V9a3.5 3.5 0 0 1 7 0v3.5Z"/>
+                                            <path d="M4.5 4.5h15s0 0 0 0v15s0 0 0 0h-15s0 0 0 0v-15s0 0 0 0Z"/>
+                                        </svg>
+                                        <span>Inzahlungnahme</span>
+                                    </button>
+                                    <button type="button" class="interest-btn" data-interest="testdrive">
+                                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                                        </svg>
+                                        <span>Probefahrt</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Message -->
+                            <div class="form-group">
+                                <label class="form-label">Nachricht</label>
+                                <textarea name="message" class="form-textarea" rows="3">Hallo, ich interessiere mich für das Fahrzeug von Ihrer Website</textarea>
+                            </div>
+                            
+                            <!-- Privacy -->
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="privacyAccepted" required>
+                                    <span class="checkbox-text">
+                                        Ich stimme der <a href="#" class="link">Datenschutzerklärung</a> zu 
+                                        und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden.
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Jetzt anfragen
+                            </button>
+                            
+                            <!-- GDPR Notice -->
+                            <div class="gdpr-notice">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="m9 12 2 2 4-4"/>
+                                </svg>
+                                <span>Wir schützen Deine Daten nach DSGVO-Standards.</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sticky Bottom Bar -->
+        <div class="sticky-bottom-bar">
+            <div class="bottom-content">
+                <button class="btn btn-primary btn-full" data-action="contact">
+                    Jetzt anfragen
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Financing Info Modal -->
+    <div class="modal" id="financing-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Finanzierungsbeispiel</h3>
+                <button class="modal-close">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="m18 6-12 12"/>
+                        <path d="m6 6 12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="financing-breakdown">
+                    <div class="breakdown-row">
+                        <span>Fahrzeugpreis</span>
+                        <span class="vehicle-price">24.990 €</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Anzahlung</span>
+                        <span class="down-payment">-4.990 €</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Nettodarlehensbetrag</span>
+                        <span class="loan-amount">20.000 €</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Fester Sollzins p.a.</span>
+                        <span>3.9%</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Effektiver Jahreszins</span>
+                        <span>4.2%</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span>Laufzeit</span>
+                        <span class="term">84 Monate</span>
+                    </div>
+                    <div class="breakdown-result">
+                        <span>Monatsrate</span>
+                        <span class="monthly-rate">289 €</span>
+                    </div>
+                </div>
+                
+                <div class="disclaimer-box">
+                    <strong>Hinweis:</strong> Beispielrechnung, unverbindlich. Bonitätsprüfung erforderlich.
+                    Die tatsächlichen Konditionen können abweichen.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
